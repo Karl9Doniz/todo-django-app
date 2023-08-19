@@ -1,0 +1,71 @@
+/* Add general styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #3498db;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+}
+
+.navbar a.nav-link {
+    color: #fff;
+}
+
+/* Add margin to the container */
+.container {
+    margin-top: 20px;
+}
+
+/* Style the Jumbotron on the home page */
+.jumbotron {
+    background-color: #f0f0f0;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* Style the buttons */
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.btn-info {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Center the text within the Jumbotron */
+.jumbotron h1 {
+    text-align: center;
+}
+
+/* Style form elements */
+form {
+    margin-top: 20px;
+}
+
+/* Style error messages */
+.alert {
+    margin-top: 20px;
+}
+
+/* Add padding to card body */
+.card-body {
+    padding: 20px;
+}

@@ -1,25 +1,29 @@
-{%extends 'todo/base.html' %}
+{% extends 'todo/base.html' %}
 {% block content %}
-
-{{ error }}
-
-{{todo.title}}
-
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
-
-<form method="POST" action="{% url 'completetodo' todo.id %}">
-    {% csrf_token %}
-    <button type="submit">Complete</button>
-</form>
-
-<form method="POST" action="{% url 'deletetodo' todo.id %}">
-    {% csrf_token %}
-    <button type="submit">Delete</button>
-</form>
-
-
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <h2 class="text-center">View Todo</h2>
+        {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ todo.title }}</h5>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+                <form method="POST" action="{% url 'completetodo' todo.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success">Complete</button>
+                </form>
+                <form method="POST" action="{% url 'deletetodo' todo.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
