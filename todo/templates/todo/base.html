@@ -4,35 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Todo App</title>
+    <title>TodoTrac</title>
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <!-- Add your custom CSS -->
-    <link rel="stylesheet" type="text/css" href="todo/static/todo/styles.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/styles.css' %}">
 </head>
 <body>
+    {% if user.is_authenticated %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="/">Todo App</a>
-            {% if user.is_authenticated %}
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'createtodo' %}">Create</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'currenttodos' %}">Current</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'completedtodos' %}">Completed</a>
-                        </li>
-                    </ul>
-                </div>
-                <form action="{% url 'logoutuser' %}" method="POST" class="ml-auto">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div>
+                <a class="navbar-brand" href="/">
+                    <img src="{% static 'todo/logo.png' %}" alt="TodoTrac Logo">
+                    <span class="ml-2">TodoTrac</span>
+                </a>
+            </div>
+            <!-- Navigation links for logged-in users -->
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'createtodo' %}">Create</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'currenttodos' %}">Current</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'completedtodos' %}">Completed</a>
+                    </li>
+                </ul>
+                <form action="{%url 'logoutuser' %}" method="POST">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-danger">Logout</button>
                 </form>
-            {% else %}
+            </div>
+        </div>
+    </nav>
+
+    {% else %}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div>
+                <a class="navbar-brand" href="/">
+                    <img src="{% static 'todo/logo.png' %}" alt="TodoTrac Logo">
+                    <span class="ml-2">TodoTrac</span>
+                </a>
+
+            </div>
+            <!-- Added div for Sign Up and Login -->
+            <div class="navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'signupuser' %}">Sign Up</a>
@@ -41,9 +62,10 @@
                         <a class="nav-link" href="{% url 'loginuser' %}">Login</a>
                     </li>
                 </ul>
-            {% endif %}
+            </div>
         </div>
     </nav>
+    {% endif %}
     <div class="container mt-4">
         {% block content %}{% endblock %}
     </div>

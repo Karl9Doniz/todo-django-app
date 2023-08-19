@@ -3,23 +3,67 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Style the navigation bar */
+/* Style the Logout button */
+.navbar form button {
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+
+/* Style the Logout button */
+.btn-danger {
+    background-color: #e74c3c; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    position: absolute;
+    top: 25px;
+    right: 50px;
+}
+
 .navbar {
-    background-color: #3498db;
+    background-color: #007bff; /* Change this color to your desired background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Adjust the height as needed */
+    margin-right: 20px; /* Adjust the horizontal margin as needed */
+    vertical-align: middle; /* Vertically align the button in the middle */
+}
+
+.navbar form button{
+    margin-right: 20px; /* Adjust the horizontal margin as needed */
+    vertical-align: middle; /* Vertically align the button in the middle */
+    margin-top: -5px;
 }
 
 .navbar-brand {
-    color: #fff;
-    font-size: 24px;
+    font-size: 25px;
+    vertical-align: middle;
 }
 
+/* Navbar text color (set to black) */
 .navbar a.nav-link {
-    color: #fff;
+    color: #000; /* Change the color as needed */
+    font-size: 18px;
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+/* Navbar link color on hover */
+.navbar a.nav-link:hover {
+    color: #ffcc00; /* Change this color to your desired hover text color */
+}
+
+.custom-spacing {
+    margin-left: 20px; /* Adjust the value as needed */
+}
+
+/* Adjust spacing between navbar items */
+.navbar-nav li {
+    margin: 0 10px; /* Adjust the margin as needed */
 }
 
 /* Add margin to the container */
 .container {
-    margin-top: 20px;
+    margin-top: 5px;
+    vertical-align: middle;
 }
 
 /* Style the Jumbotron on the home page */
@@ -42,11 +86,6 @@ body {
 
 .btn-info {
     background-color: #3498db;
-    color: #fff;
-}
-
-.btn-danger {
-    background-color: #e74c3c;
     color: #fff;
 }
 
