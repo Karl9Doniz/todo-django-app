@@ -16,7 +16,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-b882.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://todotrac.up.railway.app']
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-$pnev^l13_gi3qm4pj!k7_-m_suc7if2s%&_c8uccj9$bph9(9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['web-production-b882.up.railway.app']
+ALLOWED_HOSTS = ['todotrac.up.railway.app']
 
 
 # Application definition
