@@ -26,7 +26,7 @@ CSRF_TRUSTED_ORIGINS = ['https://todotrac.up.railway.app']
 SECRET_KEY = 'django-insecure-$pnev^l13_gi3qm4pj!k7_-m_suc7if2s%&_c8uccj9$bph9(9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['todotrac.up.railway.app']
 
